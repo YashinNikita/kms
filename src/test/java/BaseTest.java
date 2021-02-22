@@ -3,29 +3,26 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import models.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import pages.SignUpPage;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
 
 
     protected WebDriver driver;
-    protected SignUpPage signUpPage;
     protected User user;
     protected Faker faker;
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        signUpPage = new SignUpPage(driver);
         faker = new Faker();
         user = User.createRandomUser(faker);
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDownClass() {
         if (driver != null) {
             driver.quit();

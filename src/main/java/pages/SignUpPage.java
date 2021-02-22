@@ -28,7 +28,7 @@ public class SignUpPage extends BasePage {
     }
 
     public SignUpPage open() {
-        driver.navigate().to(Config.URL);
+        driver.navigate().to(Config.URL_AUTO_TEST);
         return this;
     }
 

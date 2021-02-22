@@ -15,7 +15,7 @@ public class User {
     public String company;
 
     public static User createRandomUser(Faker faker) {
-        return new User(faker.name().firstName(), faker.name().lastName(), Config.testEmail,
+        return new User(faker.name().firstName(), faker.name().lastName(), Config.TEST_EMAIL,
                 faker.phoneNumber().cellPhone(), faker.company().name());
     }
 }
