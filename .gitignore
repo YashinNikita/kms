@@ -1,0 +1,8 @@
+.idea/
+/EPM-AGL-TA.iml
+/allure-results/
+.gradle/
+/build/
+.log/
+/test-results/
+/.allure/
